@@ -30,20 +30,21 @@ public class SecurityConfig {
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers(
-                    "/api/auth/**",
-                    "/api/cities/**",
-                    "/api/areas/**",
-                    "/api/hostels/**",
-                    "/api/rooms/**",
-                    "/api/customers/**",
-                    "/api/room-types/**",
-                    "/api/bookings/**",
-                    "/api/payments/**",
-                    "/api/notifications/**",
-                    "/api/manager/**",
-                    "/api/dashboard/**",
-                    "/api/admin/**",
-                    "/actuator/health"
+        "/api/auth/login",
+        "/api/auth/register",
+        "/api/cities/**",
+        "/api/areas/**",
+        "/api/hostels/**",
+        "/api/rooms/**",
+        "/api/customers/**",
+        "/api/room-types/**",
+        "/api/bookings/**",
+        "/api/payments/**",
+        "/api/notifications/**",
+        "/api/manager/**",
+        "/api/dashboard/**",
+        "/api/admin/**",
+        "/actuator/health"
                 ).permitAll()
                 .anyRequest().authenticated()
             )

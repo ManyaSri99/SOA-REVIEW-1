@@ -1,5 +1,6 @@
 package com.hostelbooking.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -43,5 +44,6 @@ public class Hostel {
     private String status = "ACTIVE";
 
     @OneToMany(mappedBy = "hostel", cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Room> rooms = new ArrayList<>();
 }
