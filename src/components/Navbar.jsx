@@ -20,13 +20,17 @@ const Navbar = () => {
         <NavLink to="/search">Search Rooms</NavLink>
         {user?.role === 'CUSTOMER' ? <NavLink to="/my-bookings">My Bookings</NavLink> : null}
         {user?.role === 'CUSTOMER' ? <NavLink to="/feedback">Feedback</NavLink> : null}
+        {user?.role === 'CUSTOMER' ? <NavLink to="/food">Order Food</NavLink> : null}
         {user?.role === 'HOTEL_MANAGER' ? <NavLink to="/manager/dashboard">Dashboard</NavLink> : null}
+        {user?.role === 'HOTEL_MANAGER' ? <NavLink to="/manager/food-orders">Food Orders</NavLink> : null}
         {user?.role === 'ADMIN' ? <NavLink to="/admin/dashboard">Admin</NavLink> : null}
       </nav>
 
       <div className="nav-actions">
         {user ? (
           <>
+            {user.role === 'CUSTOMER' ? <Link to="/food" className="btn btn-primary food-nav-shortcut">Order Food</Link> : null}
+            {user.role === 'HOTEL_MANAGER' ? <Link to="/manager/food-orders" className="btn btn-primary food-nav-shortcut">Food Orders</Link> : null}
             <span className="user-pill">{user.name || user.email}</span>
             <button type="button" className="btn btn-light" onClick={handleLogout}>Logout</button>
           </>

@@ -23,6 +23,8 @@ import BookingManagementPage from './pages/BookingManagementPage';
 import RevenueDashboardPage from './pages/RevenueDashboardPage';
 import AlertsPage from './pages/AlertsPage';
 import FeedbackPage from './pages/FeedbackPage';
+import FoodOrderPage from './pages/FoodOrderPage';
+import ManagerFoodOrdersPage from './pages/ManagerFoodOrdersPage';
 import ManagerFeedbackPage from './pages/ManagerFeedbackPage';
 import AdminDashboardPage from './pages/AdminDashboardPage';
 import UserManagementPage from './pages/UserManagementPage';
@@ -48,8 +50,10 @@ function App() {
             <Route path="/bookings/:id" element={<ProtectedRoute allowedRoles={['CUSTOMER']}><BookingDetailsPage /></ProtectedRoute>} />
             <Route path="/profile" element={<ProtectedRoute allowedRoles={['CUSTOMER']}><ProfilePage /></ProtectedRoute>} />
             <Route path="/feedback" element={<ProtectedRoute allowedRoles={['CUSTOMER']}><FeedbackPage /></ProtectedRoute>} />
+            <Route path="/food" element={<ProtectedRoute allowedRoles={['CUSTOMER']}><FoodOrderPage /></ProtectedRoute>} />
 
             <Route path="/manager/dashboard" element={<ProtectedRoute allowedRoles={['HOTEL_MANAGER']}><ManagerDashboardPage /></ProtectedRoute>} />
+            <Route path="/manager/food-orders" element={<ProtectedRoute allowedRoles={['HOTEL_MANAGER']}><ManagerFoodOrdersPage /></ProtectedRoute>} />
             <Route path="/manager/rooms" element={<ProtectedRoute allowedRoles={['HOTEL_MANAGER']}><ManageRoomsPage /></ProtectedRoute>} />
             <Route path="/manager/rooms/add" element={<ProtectedRoute allowedRoles={['HOTEL_MANAGER']}><AddRoomPage /></ProtectedRoute>} />
             <Route path="/manager/rooms/:id/edit" element={<ProtectedRoute allowedRoles={['HOTEL_MANAGER']}><EditRoomPage /></ProtectedRoute>} />

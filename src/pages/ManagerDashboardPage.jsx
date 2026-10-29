@@ -11,6 +11,7 @@ const managerItems = [
   { to: '/manager/availability', label: 'Availability' },
   { to: '/manager/pricing', label: 'Pricing' },
   { to: '/manager/bookings', label: 'Bookings' },
+  { to: '/manager/food-orders', label: 'Food Orders' },
   { to: '/manager/revenue', label: 'Revenue' },
   { to: '/manager/alerts', label: 'Alerts' },
 ];
